@@ -60,18 +60,18 @@ a {
 }
 /****** Header ************/
 header{
-    padding: 10px;
+    margin-left: 20px;
 }
 
 .entete{
     margin-bottom: 50px;
     display: flex;
-    justify-content: space-between;
 }
 
 .entete .logo{
     width: 80%;
 }
+
 
 .entete .logo img{
     width: 80px;
@@ -80,24 +80,24 @@ header{
 .entete .lien{
     width: 20%;
     display: flex;
-    justify-content: space-between;
     list-style-type: none;
     margin-top: 0;
 }
 
 
-.entete .lien a {
+.lien a {
     position: relative;
+    
 }
 
-.entete .lien a:hover{
+.lien a:hover{
     color: #0065FC;
 }
   
-.entete .lien a::before {
+.lien a::before {
     content: '';
     position: absolute;
-    top: -10px ;
+    top: -7px ;
     width: 100%;
     height: 2px; 
     background-color:#0065FC; 
@@ -105,9 +105,16 @@ header{
     transition: transform 0.3s ease; 
 }
   
-.entete .lien a:hover::before {
+.lien a:hover::before {
     transform: scaleX(1);
 }
+
+.lien .lien-un{
+    margin-right: 50px;
+    
+}
+
+/*******1ère section *******/
 
 .rechercher{
     margin-left: 20px;
@@ -141,26 +148,28 @@ header{
 }
 
 .rechercher .barre i{
-    padding-left: 10px;
-}
-
-.rechercher i{
+    padding-left: 15px;
     margin-right: 15px;
 }
+
     
 .filtres{
     display: flex;
-    font-weight: bold;
-    margin-top: 30px;
-    align-items: center;
+    margin-top: 30px; 
 }
 
-.filtres span{
-    margin-left: 20px;
-    border: solid;
-    border-width: 3px;
-    border-radius: 20px;
-    border-color:#F2F2F2;
+.filtres h3{
+    margin-right: 20px;
+}
+
+.filtres button{
+    font-weight: bolder;
+    font-size: medium;
+    background-color: white;
+    margin-right: 10px;
+    margin-top: 10px;
+    border:  3px solid #F2F2F2;
+    border-radius: 40px;
     padding: 10px;
 }
 
@@ -168,7 +177,9 @@ header{
     margin-right: 5px;
 }
 
-.filtres span:hover{
+
+
+.filtres button:hover{
     background-color: #F2F2F2;
 }
 
@@ -179,8 +190,16 @@ header{
     margin-bottom: 30px;
 }
 
-.info i{
-    padding-right: 10px;
+.info span {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border: solid #0065FC 1px;
+    border-radius: 50%;
+}
+
+.info i {
+    margin-left: 7px;
 }
 
 
@@ -280,23 +299,29 @@ header{
 /******Activités********/
 
 .activites{
+    padding-left: 30px;
+}
+
+.activites-cards{
     display: flex;
+    height: 400px;
+    margin-bottom: 50px;
 }
 
-.activites a{
-    width: 23%;
-    max-width: 23%;
-    margin-right: 30px;
+.activites-cards a{
+    height: 100%;
+    width: 22%;
+    margin-right: auto;
 }
 
-.activites .card{
+.activites-cards .card{
     width: 100%;
     max-width: 100%;
-    height: 80%;
+    height: 100%;
     overflow: hidden;
 }
 
-.activites .card img{
+.activites-cards .card img{
     width: 350px;
     height: 85%;
     object-fit:cover;
@@ -304,7 +329,7 @@ header{
     margin-top: -10px;
 }
 
-.activites .card h3{
+.activites-cards .card h3{
     padding-left: 10px;
     
 }
@@ -333,6 +358,20 @@ footer li{
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+
+    
+    .entete .logo{
+        width: 70%;
+    }
+
+    .entete .lien{
+       width: 30%;
+    }
+
+    .filtres{
+        flex-direction: column;
+    }
+
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -362,6 +401,15 @@ footer li{
 
     .populaires-cards .card-subtitle {
         font-size: 13px;
+    }
+
+    .activites-cards{
+        height: 300px;
+    }
+
+    .activites-cards .card img{
+        height: 75%;
+        object-position: -70px;
     }
 }
 
